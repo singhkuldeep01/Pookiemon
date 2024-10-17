@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <div className='bg-[rgba(255,255,255,0.5)] flex justify-center py-10 w-max px-8 flex-col h-max items-center mt-4'>
+      <div className='bg-[rgba(255,255,255,0.5)] flex justify-center py-10 w-max px-8 flex-col h-max items-center mt-4 backdrop-blur-md'>
        <InputWithSearchResult></InputWithSearchResult>
       </div>
     </>

@@ -3,7 +3,7 @@ import './SearchBox.css'
 function SearchBox({onSearch , searchInput , onSearchClick , dropDownClick}) {
   return (
     <>
-        <div className='bg-white w-max flex justify-center rounded-full items-center '>
+        <div className='bg-white w-max flex justify-center rounded-full items-center shadow-md'>
         <label htmlFor="search-input" className="material-symbols-outlined search">search</label>
         <input
           id="search-input"
