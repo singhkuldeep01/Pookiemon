@@ -14,7 +14,7 @@ function SearchBox({onSearch , searchInput , onSearchClick , dropDownClick}) {
           value={searchInput}
           onChange={(e) => { onSearch(e.target.value) }}
         />
-            <span class="material-symbols-outlined search" onClick={dropDownClick}>arrow_drop_down</span>
+            <span className="material-symbols-outlined search" onClick={dropDownClick}>arrow_drop_down</span>
             <button className='text-white bg-blue-500 px-5 py-2 text-lg ml-2 hover:bg-blue-600 duration-75 rounded-full' onClick={onSearchClick}>Search</button>
         </div>
     </>
