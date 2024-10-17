@@ -1,6 +1,5 @@
 import React from 'react'
-// import 
-import './Searchbox.css'
+import './SearchBox.css'
 function SearchBox({onSearch , searchInput , onSearchClick , dropDownClick}) {
   return (
     <>
