@@ -10,6 +10,7 @@ function InputWithSearchResult() {
   const [searchInput, setSearchInput] = useState('');
   const [pokemonData, setPokemonData] = useState({});
   const [isDropDown, setIsDropDown] = useState(false); 
+  const [noPokemon , setNoPokemon] = useState(false);
   async function fetchData() {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10277')
     const data = await response.json()
@@ -40,12 +41,17 @@ function InputWithSearchResult() {
     setPokemonData(pokemonName);
   }
   function onSearchClickHandler(){
-    if(pokemonData.url)
+    let pokemonName = searchResult.find((item) => item.name === searchInput);
+    if(pokemonName){
       setSearchData(pokemonData);
-    else{
-      alert('No pokemon Exist');
+      setNoPokemon(false);
+      setSearchInput('');
+    }else{
+      setFilterResult([]);
+      setSearchInput('');
+      setSearchData('');
+      setNoPokemon(true);
     }
-    setSearchInput('');
   }
   function dropDownClickHandler(){
     setFilterResult(searchResult);
@@ -58,7 +64,6 @@ function InputWithSearchResult() {
     }
   }
   function onCatchHandler(){
-    console.log('Pokemon Caught');
     setSearchData('');
   }
   return (
@@ -82,6 +87,12 @@ function InputWithSearchResult() {
           onCatch={onCatchHandler} 
           pokemonData={searchData}
         />
+      )}
+      {noPokemon && (
+        <div className='bg-white p-4 mt-6'>
+          <h1 className='text-red-500 text-2xl'>Sorry !! No Pokemon Found</h1>
+          <button className='text-white bg-red-500 px-5 py-2 text-lg uppercase mt-4 hover:bg-red-600 duration-75 rounded-full shadow-xl' onClick={()=>{setNoPokemon(false)}}>Close</button>
+        </div>
       )}
     </>
   )
