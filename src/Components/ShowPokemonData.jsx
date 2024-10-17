@@ -27,8 +27,8 @@ function ShowPokemonData({pokemonData , onCatch}) {
                 <div className=' rounded-lg p-2 mt-2'>
                     <div className=' p-2 rounded-lg text-lg bg-green-700 mb-2'>Abilities:</div>
                     <div className='flex gap-2'>
-                        {data.abilities?.map((item) => {
-                            return <div className=' p-2 rounded-full text-white px-4 bg-red-500'>{item.ability.name}</div>
+                        {data.abilities?.map((item , index) => {
+                            return <div className=' p-2 rounded-full text-white px-4 bg-red-500' key={index}>{item.ability.name}</div>
                         })}
                     </div>
                 </div>
