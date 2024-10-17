@@ -1,7 +1,6 @@
 import React from 'react'
 // import 
-import './Searchbos.css'
-import { useState } from 'react'
+import './Searchbox.css'
 function SearchBox({onSearch , searchInput , onSearchClick , dropDownClick}) {
   return (
     <>
